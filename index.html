@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Jane Doe | Board-Certified Internal Medicine Specialist</title>
+  <meta name="description" content="Dr. Jane Doe provides exceptional internal medicine and preventive care with a patient-centered approach.">
+  <link rel="icon" href="favicon.ico">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" as="style">
+  
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary: #1e40af;
+      --secondary: #1e3a8a;
+      --accent: #3b82f6;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+    }
+    .hero-bg {
+      background: linear-gradient(rgba(30, 64, 175, 0.9), rgba(30, 58, 138, 0.9)), 
+                  url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+    .theme-toggle {
+      transition: all 0.3s ease;
+    }
+    .dark {
+      --primary: #3b82f6;
+      --secondary: #1e40af;
+      --accent: #60a5fa;
+    }
+    [data-theme="dark"] body {
+      background-color: #111827;
+      color: #f3f4f6;
+    }
+    [data-theme="dark"] .dark\:bg-gray-800 {
+      background-color: #1f2937;
+    }
+    .animate-fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 transition-colors duration-300">
+  <!-- Header with dark mode toggle -->
+  <header class="bg-blue-800 text-white p-6 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center">
+          <i class="fas fa-user-md text-blue-800 text-xl"></i>
+        </div>
+        <h1 class="text-2xl font-bold">Dr. Jane Doe</h1>
+      </div>
+      
+      <div class="flex items-center space-x-6">
+        <nav class="hidden md:flex space-x-6">
+          <a href="#about" class="hover:text-blue-200 transition">About</a>
+          <a href="#services" class="hover:text-blue-200 transition">Services</a>
+          <a href="#experience" class="hover:text-blue-200 transition">Experience</a>
+          <a href="#testimonials" class="hover:text-blue-200 transition">Testimonials</a>
+          <a href="#contact" class="hover:text-blue-200 transition">Contact</a>
+        </nav>
+       
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-blue-700 mt-4 p-4 rounded-lg">
+      <div class="flex flex-col space-y-3">
+        <a href="#about" class="hover:text-blue-200 transition">About</a>
+        <a href="#services" class="hover:text-blue-200 transition">Services</a>
+        <a href="#experience" class="hover:text-blue-200 transition">Experience</a>
+        <a href="#testimonials" class="hover:text-blue-200 transition">Testimonials</a>
+        <a href="#contact" class="hover:text-blue-200 transition">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with CTA -->
+  <section class="hero-bg text-white py-32 px-6 text-center">
+    <div class="max-w-4xl mx-auto animate-fade-in">
+      <h2 class="text-5xl font-bold mb-6 leading-tight">Compassionate Care, <span class="text-blue-200">Expert Knowledge</span></h2>
+      <p class="text-xl mb-8">Board-certified internal medicine specialist with 15+ years of experience in patient-centered healthcare.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#contact" class="bg-white text-blue-800 px-8 py-3 rounded-lg font-semibold hover:bg-blue-100 transition duration-300">Book Consultation</a>
+        <a href="#services" class="bg-transparent border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-800 transition duration-300">Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <div class="bg-blue-600 text-white py-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div>
+        <div class="text-3xl font-bold">15+</div>
+        <div class="text-sm uppercase tracking-wider">Years Experience</div>
+      </div>
+      <div>
+        <div class="text-3xl font-bold">10K+</div>
+        <div class="text-sm uppercase tracking-wider">Patients Treated</div>
+      </div>
+      <div>
+        <div class="text-3xl font-bold">98%</div>
+        <div class="text-sm uppercase tracking-wider">Patient Satisfaction</div>
+      </div>
+      <div>
+        <div class="text-3xl font-bold">24/7</div>
+        <div class="text-sm uppercase tracking-wider">Emergency Support</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h3 class="text-3xl font-semibold mb-6 text-blue-800">About Dr. Jane Doe</h3>
+        <p class="mb-4 text-lg">Dr. Jane Doe is a Harvard-educated, board-certified physician specializing in internal medicine with a focus on preventive care and chronic disease management.</p>
+        <p class="mb-6">Her integrative approach combines evidence-based medicine with lifestyle interventions to optimize patient health outcomes. Dr. Doe believes in treating the whole person, not just the symptoms.</p>
+        <div class="flex space-x-4">
+          <a href="#contact" class="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-800 transition">Contact</a>
+          <a href="#experience" class="border border-blue-700 text-blue-700 px-6 py-2 rounded hover:bg-blue-50 transition">Experience</a>
+        </div>
+      </div>
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" 
+             alt="Dr. Jane Doe" 
+             class="rounded-lg shadow-xl w-full h-auto max-w-md mx-auto">
+        <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg hidden md:block">
+          <div class="text-blue-700 font-bold text-xl">15+ Years</div>
+          <div class="text-gray-600 text-sm">Medical Experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education and Certifications -->
+  <section class="py-20 bg-gray-50 dark:bg-gray-800 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-3xl font-semibold mb-12 text-center text-blue-800">Education & Certifications</h3>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md hover:shadow-lg transition">
+          <div class="text-blue-700 dark:text-blue-400 text-4xl mb-4">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h4 class="font-bold text-xl mb-2">Harvard Medical School</h4>
+          <p class="text-gray-600 dark:text-gray-300">Doctor of Medicine (MD)</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400">2005-2009</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md hover:shadow-lg transition">
+          <div class="text-blue-700 dark:text-blue-400 text-4xl mb-4">
+            <i class="fas fa-hospital"></i>
+          </div>
+          <h4 class="font-bold text-xl mb-2">Johns Hopkins Hospital</h4>
+          <p class="text-gray-600 dark:text-gray-300">Residency in Internal Medicine</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400">2009-2012</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md hover:shadow-lg transition">
+          <div class="text-blue-700 dark:text-blue-400 text-4xl mb-4">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <h4 class="font-bold text-xl mb-2">Board Certified</h4>
+          <p class="text-gray-600 dark:text-gray-300">American Board of Internal Medicine</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400">2012-Present</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md hover:shadow-lg transition">
+          <div class="text-blue-700 dark:text-blue-400 text-4xl mb-4">
+            <i class="fas fa-heartbeat"></i>
+          </div>
+          <h4 class="font-bold text-xl mb-2">Lifestyle Medicine</h4>
+          <p class="text-gray-600 dark:text-gray-300">Certified Practitioner</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400">2018-Present</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-3xl font-semibold mb-12 text-center text-blue-800">Professional Experience</h3>
+      
+      <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:w-0.5 before:bg-gradient-to-b before:from-blue-200 before:via-blue-500 before:to-blue-200 md:before:ml-0 md:before:left-8">
+        <!-- Experience 1 -->
+        <div class="relative pl-12 md:pl-24">
+          <div class="absolute left-0 md:left-8 top-0 w-12 h-12 rounded-full bg-blue-100 border-4 border-blue-300 flex items-center justify-center text-blue-700">
+            <i class="fas fa-briefcase-medical text-xl"></i>
+          </div>
+          <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
+            <h4 class="font-bold text-xl mb-1">Founder & Lead Physician</h4>
+            <p class="text-blue-700 dark:text-blue-400 font-semibold mb-2">Wellness Integrative Medicine Clinic</p>
+            <p class="text-gray-600 dark:text-gray-300 mb-2">2018-Present</p>
+            <p class="text-gray-700 dark:text-gray-200">Established and lead a multi-disciplinary clinic focused on preventive health and chronic disease management through integrative approaches.</p>
+          </div>
+        </div>
+        
+        <!-- Experience 2 -->
+        <div class="relative pl-12 md:pl-24">
+          <div class="absolute left-0 md:left-8 top-0 w-12 h-12 rounded-full bg-blue-100 border-4 border-blue-300 flex items-center justify-center text-blue-700">
+            <i class="fas fa-hospital-user text-xl"></i>
+          </div>
+          <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
+            <h4 class="font-bold text-xl mb-1">Attending Physician</h4>
+            <p class="text-blue-700 dark:text-blue-400 font-semibold mb-2">City General Hospital</p>
+            <p class="text-gray-600 dark:text-gray-300 mb-2">2012-2018</p>
+            <p class="text-gray-700 dark:text-gray-200">Provided comprehensive internal medicine care in both inpatient and outpatient settings, specializing in complex chronic conditions.</p>
+          </div>
+        </div>
+        
+        <!-- Experience 3 -->
+        <div class="relative pl-12 md:pl-24">
+          <div class="absolute left-0 md:left-8 top-0 w-12 h-12 rounded-full bg-blue-100 border-4 border-blue-300 flex items-center justify-center text-blue-700">
+            <i class="fas fa-globe-americas text-xl"></i>
+          </div>
+          <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
+            <h4 class="font-bold text-xl mb-1">Medical Volunteer</h4>
+            <p class="text-blue-700 dark:text-blue-400 font-semibold mb-2">Doctors Without Borders</p>
+            <p class="text-gray-600 dark:text-gray-300 mb-2">2010, 2015</p>
+            <p class="text-gray-700 dark:text-gray-200">Provided medical care in underserved regions, focusing on infectious diseases and primary care in resource-limited settings.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Offered -->
+  <section id="services" class="py-20 bg-gray-50 dark:bg-gray-800 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-3xl font-semibold mb-4 text-center text-blue-800">Our Services</h3>
+      <p class="text-xl text-center mb-12 max-w-3xl mx-auto">Comprehensive medical care tailored to your individual health needs and goals.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="service-card bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md transition duration-300">
+          <div class="text-blue-700 dark:text-blue-400 text-4xl mb-4">
+            <i class="fas fa-stethoscope"></i>
+          </div>
+          <h4 class="font-bold text-xl mb-3">General Consultation</h4>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Comprehensive health evaluations and personalized medical advice for acute and chronic conditions.</p>
+          <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Annual physical exams</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Sick visits</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Health risk assessments</li>
+          </ul>
+        </div>
+        
+        <!-- Service 2 -->
+        <div class="service-card bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md transition duration-300">
+          <div class="text-blue-700 dark:text-blue-400 text-4xl mb-4">
+            <i class="fas fa-heartbeat"></i>
+          </div>
+          <h4 class="font-bold text-xl mb-3">Chronic Disease Management</h4>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Specialized care plans for diabetes, hypertension, heart disease, and other chronic conditions.</p>
+          <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Personalized treatment plans</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Medication management</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Lifestyle interventions</li>
+          </ul>
+        </div>
+        
+        <!-- Service 3 -->
+        <div class="service-card bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md transition duration-300">
+          <div class="text-blue-700 dark:text-blue-400 text-4xl mb-4">
+            <i class="fas fa-shield-virus"></i>
+          </div>
+          <h4 class="font-bold text-xl mb-3">Preventive Care</h4>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Proactive health strategies to prevent illness and optimize wellness.</p>
+          <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Routine screenings</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Vaccinations</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Health coaching</li>
+          </ul>
+        </div>
+        
+        <!-- Service 4 -->
+        <div class="service-card bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md transition duration-300">
+          <div class="text-blue-700 dark:text-blue-400 text-4xl mb-4">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h4 class="font-bold text-xl mb-3">Mental Health</h4>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Integrated approach to mental wellbeing and emotional health.</p>
+          <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Anxiety & depression</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Stress management</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Sleep disorders</li>
+          </ul>
+        </div>
+        
+        <!-- Service 5 -->
+        <div class="service-card bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md transition duration-300">
+          <div class="text-blue-700 dark:text-blue-400 text-4xl mb-4">
+            <i class="fas fa-utensils"></i>
+          </div>
+          <h4 class="font-bold text-xl mb-3">Nutrition Counseling</h4>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Evidence-based dietary guidance for health conditions and wellness.</p>
+          <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Weight management</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Medical nutrition therapy</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Supplement guidance</li>
+          </ul>
+        </div>
+        
+        <!-- Service 6 -->
+        <div class="service-card bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md transition duration-300">
+          <div class="text-blue-700 dark:text-blue-400 text-4xl mb-4">
+            <i class="fas fa-procedures"></i>
+          </div>
+          <h4 class="font-bold text-xl mb-3">Geriatric Care</h4>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Specialized care for older adults focusing on quality of life.</p>
+          <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Comprehensive geriatric assessments</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Polypharmacy reviews</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Advanced care planning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-20 px-6 bg-blue-800 text-white">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-3xl font-semibold mb-12 text-center">Patient Testimonials</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card p-6 rounded-xl border border-blue-700">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-blue-700 flex items-center justify-center text-xl mr-4">
+              <i class="fas fa-user"></i>
+            </div>
+            <div>
+              <h4 class="font-bold">Sarah Johnson</h4>
+              <div class="flex text-yellow-300 text-sm">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+ 
